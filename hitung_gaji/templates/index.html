@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekap Gaji Alba Bakery</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <h1>Rekap Gaji Karyawan ALBA BAKERY</h1>
+            <p>Sistem pencatatan waktu otomatis dengan format laporan Excel Bergaris</p>
+        </header>
+
+        <div class="card form-container">
+            <div class="grid-inputs">
+                <div class="input-group">
+                    <label>Tanggal</label>
+                    <input type="date" id="tanggal">
+                </div>
+                <div class="input-group flex-2">
+                    <label>Nama Karyawan</label>
+                    <input type="text" id="nama" placeholder="Masukkan nama...">
+                </div>
+                <div class="input-group">
+                    <label>Jam Masuk</label>
+                    <input type="time" id="masuk" value="07:00">
+                </div>
+                <div class="input-group">
+                    <label>Jam Keluar</label>
+                    <input type="time" id="keluar" value="17:00">
+                </div>
+                <button onclick="tambahData()" class="btn-submit">+ Masukkan Data</button>
+            </div>
+        </div>
+
+        <div id="tabel-container"></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
